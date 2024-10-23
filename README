@@ -1,8 +1,8 @@
-# **Privacy Detector**
+## Privacy Detector
 
 Uma extensão para o Firefox que detecta e apresenta informações sobre a **privacidade do usuário** durante a navegação. Esta ferramenta ajuda a identificar **conexões de terceiros**, **cookies** e **armazenamento de dados**, proporcionando uma visão clara sobre a privacidade em páginas da web.
 
-## **Funcionalidades**
+## Funcionalidades
 
 - **Detecção de Conexões de Terceiros:** Monitora e exibe as conexões a domínios de terceiros durante a navegação.
 - **Contagem de Cookies:** Conta a quantidade de cookies injetados durante o carregamento de uma página, diferenciando entre cookies de primeira e terceira parte.
@@ -10,7 +10,7 @@ Uma extensão para o Firefox que detecta e apresenta informações sobre a **pri
 - **Verificação de Privacidade:** Gera um indicador de privacidade baseado em uma metodologia definida, considerando as práticas de coleta de dados da página.
 - **Detecção de Canvas Fingerprint:** Identifica se a página utiliza técnicas de fingerprinting para rastreamento.
 
-## **Instalação**
+## Instalação
 
 1. **Baixe os Arquivos da Extensão:**
    - Clone ou baixe este repositório para o seu computador.
@@ -27,7 +27,7 @@ Uma extensão para o Firefox que detecta e apresenta informações sobre a **pri
 5. **Testar a Extensão:**
    - Navegue para qualquer site da web e clique no ícone da extensão na barra de ferramentas para visualizar os resultados no popup.
 
-## **Uso**
+## Uso
 
 - **Abrindo o Popup:**
    - Clique no ícone da extensão na barra de ferramentas do Firefox para abrir o popup que exibirá as informações coletadas sobre a privacidade.
