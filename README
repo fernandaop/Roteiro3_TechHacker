@@ -9,7 +9,6 @@ Uma extensão para o Firefox que detecta e apresenta informações sobre a **pri
 - **Detecção de Armazenamento Local:** Identifica dados armazenados no cliente via HTML5.
 - **Verificação de Privacidade:** Gera um indicador de privacidade baseado em uma metodologia definida, considerando as práticas de coleta de dados da página.
 - **Detecção de Canvas Fingerprint:** Identifica se a página utiliza técnicas de fingerprinting para rastreamento.
-- **Conexao de terceiros:** Identifica solicitacao de sites terceiros 
 ## Explicando cada informacao: 
 
 1. Pontuação de Privacidade
