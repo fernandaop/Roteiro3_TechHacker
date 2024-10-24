@@ -1,6 +1,54 @@
 ## Privacy Detector
 
-Uma extensão para o Firefox que detecta e apresenta informações sobre a **privacidade do usuário** durante a navegação. Esta ferramenta ajuda a identificar **conexões de terceiros**, **cookies** e **armazenamento de dados**, proporcionando uma visão clara sobre a privacidade em páginas da web.
+Uma extensão para o Firefox que detecta e apresenta informações sobre a **privacidade do usuário** durante a navegação. Esta ferramenta ajuda a identificar diversas informacoes, proporcionando uma visão clara sobre a privacidade em páginas da web.
+
+## Funcionalidades
+
+- **Detecção de Conexões de Terceiros:** Monitora e exibe as conexões a domínios de terceiros durante a navegação.
+- **Contagem de Cookies:** Conta a quantidade de cookies injetados durante o carregamento de uma página, diferenciando entre cookies de primeira e terceira parte.
+- **Detecção de Armazenamento Local:** Identifica dados armazenados no cliente via HTML5.
+- **Verificação de Privacidade:** Gera um indicador de privacidade baseado em uma metodologia definida, considerando as práticas de coleta de dados da página.
+- **Detecção de Canvas Fingerprint:** Identifica se a página utiliza técnicas de fingerprinting para rastreamento.
+
+## Explicando cada informacao: 
+
+1. Pontuação de Privacidade
+O que é:
+A pontuação de privacidade é um número que representa o quão bem a página protege ou compromete a privacidade do usuário. A pontuação começa em 100 e diminui conforme certos comportamentos considerados prejudiciais à privacidade são detectados, como o uso de cookies de terceiros, armazenamento local e Canvas Fingerprinting.
+
+Como é capturada:
+Total de cookies: Se houver mais de 10 cookies, a pontuação é reduzida em 20.
+Cookies de terceira parte: Se houver mais de 5 cookies de terceiros, a pontuação é reduzida em 30.
+Armazenamento local: Se a página usar o armazenamento local (localStorage ou sessionStorage), a pontuação é reduzida em 10.
+Canvas Fingerprinting: Se houver detecção de Canvas Fingerprinting, a pontuação é reduzida em 40.
+
+2. Total de Cookies
+O que é:
+Essa informação mostra o número total de cookies armazenados pela página atual. Cookies são pequenos pedaços de dados que os sites armazenam no navegador do usuário para diversas finalidades, como autenticação, rastreamento de comportamento e personalização de conteúdo.
+
+Como é capturada:
+A captura de cookies é feita usando a API chrome.cookies.getAll.
+
+3. Cookies de Terceira Parte
+O que é:
+Cookies de terceira parte são cookies que não pertencem ao domínio que o usuário está visitando diretamente, mas que são injetados por outros serviços ou sites, geralmente usados para rastreamento de publicidade ou análise.
+
+Como é capturada:
+Isso é feito comparando os domínios dos cookies com o domínio do site carregado.
+
+4. Uso de Armazenamento Local (LocalStorage/SessionStorage)
+O que é:
+O armazenamento local (localStorage e sessionStorage) é uma forma de o site armazenar dados diretamente no navegador do usuário, sem expiração, o que pode ser usado para salvar preferências do usuário, dados de sessão, entre outros. Um site que faz uso excessivo de armazenamento local pode estar armazenando mais informações do que o necessário.
+
+Como é capturada:
+A função verificarStorage usa a API chrome.tabs.executeScript para injetar um script na página que conta o número de entradas em localStorage e sessionStorage. 
+
+5. Canvas Fingerprinting Detectado
+O que é:
+Canvas Fingerprinting é uma técnica usada para identificar de forma única o navegador de um usuário sem o uso de cookies, ao gerar e analisar gráficos através do elemento HTML5 <canvas>. Isso permite que um site rastreie os usuários de forma mais difícil de detectar e bloquear.
+
+Como é capturada:
+A detecção de Canvas Fingerprinting é feita interceptando chamadas para o método toDataURL do elemento canvas. Esse método é normalmente usado para exportar o conteúdo do canvas em um formato de imagem. Se o método for chamado, o script marca que Canvas Fingerprinting foi detectado.
 
 ## Funcionalidades
 
