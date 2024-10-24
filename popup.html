@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Privacy Detector</title>
+<html>
+  <head>
+    <title>Privacidade</title>
     <style>
-        body {
-            width: 200px;
-            font-family: Arial, sans-serif;
-            padding: 10px;
-        }
-        h2 {
-            font-size: 16px;
-        }
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-    <h2>Resultados da Privacidade</h2>
-    <div id="results">
-        <p>Conexões de terceiros: <span id="thirdPartyCount">0</span></p>
-        <p>Cookies de primeira parte: <span id="firstPartyCount">0</span></p>
-        <p>Cookies de terceira parte: <span id="thirdPartyCookies">0</span></p>
-    </div>
-    <script src="popup.js"></script>
-</body>
+  </head>
+  <body>
+    <img src="icon.png" alt="Ícone da Extensão">
+    <h1>Verificar Privacidade</h1>
+    <div id="resultado">Carregando...</div> <!-- Exibe a mensagem "Carregando..." até que os dados sejam processados -->
+    <script src="popup.js"></script> <!-- Agora o JavaScript fica separado -->
+  </body>
 </html>
