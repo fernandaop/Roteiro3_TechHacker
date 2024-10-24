@@ -1,4 +1,6 @@
 // 1. Detecção de Conexões de Terceiros
+let conexoesDeTerceiros = new Set();
+
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     const url = new URL(details.url);
@@ -10,6 +12,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       const activeTabUrl = new URL(activeTab.url);
       if (activeTabUrl.hostname !== domain) {
         console.log("Conexão de terceiro detectada:", domain);
+        conexoesDeTerceiros.add(domain); // Armazenar o domínio detectado
       }
     });
   },
@@ -88,7 +91,8 @@ function verificarPrivacidade(callback) {
           totalCookies: totalCookies,
           thirdPartyCookies: thirdPartyCookies,
           storageUsage: storageUsage,
-          canvasFingerprinting: canvasFingerprinting
+          canvasFingerprinting: canvasFingerprinting,
+          conexoesDeTerceiros: Array.from(conexoesDeTerceiros) // Adiciona domínios de terceiros detectados
         });
       });
     });
