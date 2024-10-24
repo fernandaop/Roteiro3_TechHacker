@@ -9,7 +9,7 @@ Uma extensão para o Firefox que detecta e apresenta informações sobre a **pri
 - **Detecção de Armazenamento Local:** Identifica dados armazenados no cliente via HTML5.
 - **Verificação de Privacidade:** Gera um indicador de privacidade baseado em uma metodologia definida, considerando as práticas de coleta de dados da página.
 - **Detecção de Canvas Fingerprint:** Identifica se a página utiliza técnicas de fingerprinting para rastreamento.
-
+- **Conexao de terceiros:** Identifica solicitacao de sites terceiros 
 ## Explicando cada informacao: 
 
 1. Pontuação de Privacidade
@@ -49,6 +49,10 @@ Canvas Fingerprinting é uma técnica usada para identificar de forma única o n
 
 Como é capturada:
 A detecção de Canvas Fingerprinting é feita interceptando chamadas para o método toDataURL do elemento canvas. Esse método é normalmente usado para exportar o conteúdo do canvas em um formato de imagem. Se o método for chamado, o script marca que Canvas Fingerprinting foi detectado.
+
+6. Conexões de terceiros:
+O que é:
+Referem-se a solicitações de rede feitas por uma página web para domínios que não pertencem ao site principal que o usuário está visitando. Essas conexões geralmente são para serviços externos, como servidores de anúncios, redes de rastreamento, redes sociais, ou provedores de conteúdo de terceiros (como vídeos ou imagens).
 
 ## Funcionalidades
 
