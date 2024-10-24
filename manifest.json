@@ -1,29 +1,26 @@
 {
-    "manifest_version": 2,
-    "name": "Privacy Detector",
-    "version": "1.0",
-    "description": "Detecta conexões a domínios de terceiros e outras violações de privacidade.",
-    "permissions": [
-      "tabs",
-      "webRequest",
-      "webRequestBlocking",
-      "cookies",
-      "storage",
-      "<all_urls>"
-    ],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": "icon.png"
-    }
+  "manifest_version": 2,
+  "name": "Detector de Privacidade",
+  "version": "1.0",
+  "description": "Extensão para detectar conexões de terceiros, cookies e armazenamento local.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Verificar Privacidade"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"  
   }
-  
+}
